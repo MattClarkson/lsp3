@@ -4,17 +4,19 @@
 		<meta charset="UTF-8"/>
 	</head>
 	<body>
-		<!-- The container for our embed-->
-        <p>Matt, in HTML file, before </p>        
-		<div id="embed-example"></div>
-        <p>Matt, in HTML file, after </p>        
-		<!-- Buttons displayed under our embed demo -->
-		<div class="embed-example-ctas">
-			<button id="export-xml" class="btn-cta-site">Export to MusicXML</button>
-			<button id="export-midi" class="btn-cta-site">Export to MIDI</button>
-			<button id="export-png" class="btn-cta-site">Export to PNG</button>
+		<div id="outer-container" style="overflow:auto">
+			<div id="container1">
+			</div>
 		</div>
-		<script src="https://prod.flat-cdn.com/embed-js/v1.1.0/embed.min.js"></script>
-		<script src="./index.js"></script>
+		<script>
+     		const path = 'https://aarondavidnewman.github.io/Smoosic/release/library/Beethoven_AnDieFerneGeliebte.xml';
+      		Smo.SuiApplication.configure({
+            		    mode: 'library',
+                   		scoreDomContainer: 'outer-container',
+                   		remoteScore: path
+      		}).then((application) => {
+        		console.log('done!');
+      		});
+		</script>
 	</body>
 </html>
